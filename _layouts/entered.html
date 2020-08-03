@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include page/head.html %}
+
+  <body class="no-js">
+
+    {% include components/tracking.html %}
+
+    <div class="content-spacing section-spacing">
+      <div class="container text--center">
+        <div class="width width-lg vpad--xxxl">
+          <h1 class="title title--md">{{page.title}}</h1>
+            <div class="space--xs"></div>
+          <div class="title title--xs">{{page.intro}}</div>
+            <div class="space--md"></div>
+            <h1 class="title title--xl">Viel Glück!</h1>
+          <div class="space--xxl"></div>
+          <a href="{{page.cta.link | liquify}}" class="btn btn--orange">{{page.cta.text}}</a>
+            <div class="space--xs"></div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

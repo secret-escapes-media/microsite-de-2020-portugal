@@ -1,0 +1,27 @@
+// background styles
+
+.bg {
+  &--white { background-color: $white; }
+  &--light { background-color: $grey-lightest; }
+  &--dark  { background-color: $grey-dark; }
+  &--darker  { background-color: $grey-darker; }
+  &--bv-blue { background-color: $bv-blue; }
+  &--bv-red { background-color: $bv-red; }
+  &--bv-black { background-color: $black; }
+  &--black  { background-color: rgba($black, 1);
+    @include bp($lg){
+      background-color: rgba($black, 1);
+    }
+  }
+  &--img   { @include background-attributes; }
+  &__fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-background;
+    @include background-attributes;
+    background-color: $grey-darker;
+  }
+}

@@ -1,0 +1,53 @@
+---
+layout: default
+
+---
+
+
+
+
+{% include page/videos.html  %}
+
+<!-- Competition Form ---->
+
+
+
+<div class="vpad--xl bg--light">
+  <div class="container">
+    <div id="enter"></div>
+
+    <h3 class="text text--serif text--xxxl text--bv-blue bv-headline-divider text--upper text--center">Wählen Sie Ihren Favoriten </h3>
+    <div id="entry-form" class="vpad--md">
+      {% assign form = page.competition-form %}
+      <form class="form boilerform competition-form" action="{{form.post-url}}" method="POST" data-expires="{{form.expiry-date}}" novalidate>
+        {% include form/messages.html %}
+        <div class="form__content width width--md">
+          {% for item in form.fields %}
+            <div class="form__input js-form-input">
+              {% case item.type %}
+                {% when 'text' %}
+                  {% include form/text.html data=item %}
+                {% when 'text-long' %}
+                  {% include form/text-long.html data=item %}
+                {% when 'email' %}
+                  {% include form/email.html data=item %}
+                {% when 'radio' %}
+                  {% include form/radio.html data=item %}
+                {% when 'checkbox' %}
+                  {% include form/checkbox.html data=item %}
+                {% when 'select' %}
+                  {% include form/select.html data=item %}
+              {% endcase %}
+            </div>
+      
+          {% endfor %}
+          <div class="space--sm"></div>
+          <p class="text--sm text--normal">{{form.terms}}</p>
+          <div class="space--sm"></div>
+          <input class="js-form-entry-time" id="entry-time" name="entry-time" type="hidden">
+          <button type="submit" class="c-button" disabled>{{form.submit}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

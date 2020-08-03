@@ -1,0 +1,97 @@
+---
+layout: default
+
+---
+
+
+{% for section in site.data.makevideo %}
+
+
+<div class=" vpad--xl bg--bv-blue" >
+  <div class="container width width--lg text--white ">
+    <div class="width width--lg " >
+       <h3 class="text text--serif text--xxxxl text--bold ">{{section.title}}</h3>
+       <div class="space--sm"></div>
+       <div class="text text--lg text--white text--justify"><p class="">{{section.description}}</p></div>
+         <div class="space--lg"></div>
+    </div>
+
+
+
+    {% for tips in section.tips.items %}
+      <h3 class=" text text--md text--bolder text--upper">{{tips.question}}?</h3>
+      <div class="space--xs"></div>
+      <div class=" text text--md text--normal bv-linehight">{{tips.answer}}</div>
+      <div class="space--md"></div>
+
+    {% endfor %}
+
+  </div>
+</div>
+  {% endfor %}
+
+
+<div id="hotel" class="vpad--xl bg--white">
+  <div class="container">
+    <h2 class="text text--serif text--xxxxl text--bv-blue text--bold text--center">{{page.hotel.title}}</h2>
+    <div class="space--md"></div>
+     <div class="row vpad--sm row--6-6 row--gutters text--left">
+     <div class="col col--8 ">
+     <div class="pt-iframe-ratio">
+      <iframe  src="https://www.youtube.com/embed/GurEpTMIA2I?rel=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+</div>
+<div class="col col--4 text--left">
+      <h5 class="text text--md text--bold text--upper text--bv-grey">{{page.hotel.sub-title}}</h5>
+      <div class="space--sm"></div>
+      <div class="text text--normal text--md ">{{page.hotel.content}}</div>
+      <div class="space--xxs"></div>
+    </div>
+</div>
+</div>
+</div>
+<!-- Competition Form ---->
+
+
+
+<div class="vpad--xl bg--light">
+  <div class="container">
+    <div id="enter"></div>
+
+    <h3 class="text text--serif text--xxxxl text--bv-blue text--bold text--center">Am Gewinnspiel teilnehmen</h3>
+    <div id="entry-form" class="vpad--md">
+      {% assign form = page.competition-form %}
+      <form class="form boilerform competition-form" action="{{form.post-url}}" method="POST" data-expires="{{form.expiry-date}}" novalidate>
+        {% include form/messages.html %}
+        <div class="form__content width width--md">
+          {% for item in form.fields %}
+            <div class="form__input js-form-input">
+              {% case item.type %}
+                {% when 'text' %}
+                  {% include form/text.html data=item %}
+                {% when 'text-long' %}
+                  {% include form/text-long.html data=item %}
+                {% when 'email' %}
+                  {% include form/email.html data=item %}
+                {% when 'radio' %}
+                  {% include form/radio.html data=item %}
+                {% when 'checkbox' %}
+                  {% include form/checkbox.html data=item %}
+                {% when 'select' %}
+                  {% include form/select.html data=item %}
+              {% endcase %}
+            </div>
+
+          {% endfor %}
+          <div class="space--sm"></div>
+          <p class="text--sm text--normal">{{form.terms}}</p>
+          <div class="space--sm"></div>
+          <input class="js-form-entry-time" id="entry-time" name="entry-time" type="hidden">
+          <button type="submit" class="c-button" disabled>{{form.submit}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

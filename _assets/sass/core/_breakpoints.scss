@@ -1,0 +1,19 @@
+// should the widths be here?
+
+$xxxxl: 1200px;
+$xxxl: 1024px;
+$xxl:  970px;
+$xl:   800px;
+$lg:   650px;
+$md:   450px;
+$sm:   330px;
+
+// horizontal breakpoints
+@mixin bp($width){
+  @media (min-width: $width){ @content; }
+}
+
+// vertical breakpoint
+@mixin vbp($width){
+  @media (min-height: $width){ @content; }
+}

@@ -1,0 +1,115 @@
+// styles for the microsite nav
+
+$site-nav-height:    60px;
+$site-nav-height-sm: 50px;
+$nav-width-bp:       1150px;
+$nav-color:          $bv-red;
+
+
+// global site nav height
+@mixin site-nav-height {
+  height: $site-nav-height-sm;
+  min-height: $site-nav-height-sm;
+  @include bp($md){
+    height: $site-nav-height;
+    min-height: $site-nav-height;
+  }
+}
+
+.site-nav {
+  position: relative;
+  background-color: rgba($nav-color,.85);
+  //border: 1px solid rgba($black,.05);
+  text-align: center;
+
+  // NEEDS EXPLAINING LIKE THE CORE NAV OFFSET
+  &__offset:before {
+    // corrects header overlapping content
+    content: '';
+    display: block;
+    @include site-nav-height;
+  }
+
+
+  &:before {
+    // arrow icon prompt for horizontal scroll
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-nav-upper;
+    width: $site-nav-height-sm;
+    background-image: url("../img/icons/nav-arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: $site-nav-height-sm auto;
+    @include site-nav-height;
+    @include bp($md){
+      width: $site-nav-height;
+      background-size: $site-nav-height auto;
+    }
+    // remove arrow icon when no overflow
+    @include bp($nav-width-bp){ display: none; }
+  }
+
+  &__scroll-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    @include bp($nav-width-bp){ overflow: visible; }
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: $xxxl;
+    margin-left: auto;
+    margin-right: auto;
+    @include site-nav-height;
+    &:after {
+      // additional spacing for end of list so content can scroll past the overlaid arrow icon
+      content: '';
+      min-width: $site-nav-height-sm;
+      @include bp($md){ min-width: $site-nav-height/3; }
+      @include bp($nav-width-bp){ display: none; }
+    }
+  }
+  &__item {
+    display: flex;
+    flex: 1 0 auto;
+    //border-right: 1px solid rgba($white,.15);
+    &:last-child { border-right: 0; }
+  }
+  &__link {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding-left: $s4;
+    padding-right: $s4;
+    font-family: $font-title-01;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: $white;
+    transition: background-color $transition-time ease;
+    white-space: nowrap;
+    &.is-current      { color: $white;  background-color: rgba($bv-darkred,1); box-shadow: inset 0 0 10px rgba($black, .5); }//border-bottom: 2px solid $bv-blue; padding-top:2px; color: rgba($bv-blue,1);
+    .no-touch &:hover {  color: $white;  background-color: rgba($bv-darkred,1);}
+    @include bp($nav-width-bp){
+      padding-left: $s0;
+      padding-right: $s0;
+    }
+  }
+
+  // js-sticky-nav style
+  &.is-stuck {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    z-index: $z-nav  ;
+  }
+}

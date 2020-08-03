@@ -1,0 +1,27 @@
+
+
+ <div class="bg--white" >
+  <div class="container vpad--xl">
+      <h3 class="text text--serif text--xxxl text--bv-blue bv-headline-divider text--upper text--center">Folgende Videos stehen zur Wahl</h3>
+    <div class="row row--xl-4-4-4 row--lg-6-6 row--gutters-xs" >
+
+
+
+      {% for video in site.data.sections %}
+
+          {% if video.gallery | where: 'gallery', 'true' %}
+        <div class="col" >
+          <div id="tracking-poi-{{video.id}}" class="bg--white js-open-modal" data-modal-group="gallery" data-open-modal="{{video.id}}" >
+            <video poster="" width="100%"  >
+             <source src="{{site.img}}/content/abstimmung/video{{forloop.index}}.mp4" type="video/mp4"></video>
+            <div class="bg-img--4-3 bg-img--md-1-1 bg-img--lg-1-1 "></div>
+
+            <div class="text--bold text--md ">{{forloop.index}}. {{video.title}}</div>
+          </div>
+        </div>
+
+        {% endif %}
+      {% endfor %}
+
+  </div>
+</div>

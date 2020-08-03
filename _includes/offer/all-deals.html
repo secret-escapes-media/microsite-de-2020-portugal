@@ -1,0 +1,21 @@
+{% include offer/variables.html %}
+<div class=" vpad--xl bg--light text--center" >
+
+  <div class="container ">
+
+  <!-- ANFANG ANGEBOTE: Kopieren Anfang -->
+
+  {% for offer in offers-by-expires %}
+
+    {% include offer/deals.html %}
+
+  {% endfor %}
+
+  <!-- ENDE ANGEBOTE: Kopieren Ende  -->
+
+  </div>
+
+  <div class="space--xxl"></div>
+  <a href="#" class="btn btn--bv-red ">Nach oben</a>
+
+</div>

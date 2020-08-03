@@ -1,0 +1,79 @@
+#####################################
+#
+#  OPTIONS
+#
+#    pages:
+#      - id: overview         # (shows on specific page)
+#      - id: all              # (shows on all pages)
+#      - layout: group-page   # (shows on specific layout)
+#
+#   # if option is not set, defaul is standard html content
+#   type:
+#     youtube     # loads in a different thing
+#     series      # this is a parent container that has contents
+#
+#   # when included, an extra html is used for a full width image
+#   image: 'example-image-name.jpg'
+#
+#
+#
+#####################################
+
+
+
+#################################################
+#   Competition
+#################################################
+
+- id: competition-terms
+  pages:
+    - id: gewinnspiel
+  content: >
+    <div class="content-spacing width width--xl vpad--sm">
+      <h3 class="core-title core-title--md">Teilnahmebedingungen Gewinnspiel South&nbsp;African&nbsp;Tourism, South African&nbsp;Airways, Nikon & Secret&nbsp;Escapes</h3>
+      <div class="space--lg"></div>
+      <div style="margin-left: 0px;">
+          <p>Die Online-Gewinnspiele und Verlosungen auf secretescapes.de werden von der Secret Escapes Ltd., 120 Holborn, London EC1N 2TD, Großbritannien veranstaltet. Sofern ein Kooperationspartner von Secret Escapes Mitveranstalter ist, wird er explizit benannt. Sämtliche in diesen Teilnahmebedingungen verwendete Personen- und Funktionsbezeichnungen in der männlichen Form gelten auch in der weiblichen Form. Mit der Teilnahme erkennen Sie die Teilnahmebedingungen an.</p>
+          <h4 class="core-title core-title--xs space--lg">Teilnahmeberechtigung</h4>
+          <div class="space--sm"></div>
+          <p>Teilnahmeberechtigt sind ausschließlich volljährige natürliche Personen mit Wohnsitz in Deutschland und Österreich. Pro Person ist nur eine einmalige Teilnahme am Gewinnspiel erlaubt. </p>
+          <p>Die Teilnahme am Gewinnspiel ist kostenlos und unabhängig von dem Erwerb einer Ware oder Dienstleistung. Die Teilnahme erfolgt durch das Absenden des Formulars auf <a href="http://mp.secretescapes.com/de/2020/suedafrika/gewinnspiel/" > http://mp.secretescapes.com/de/2020/suedafrika/gewinnspiel </a> unter Angabe von Vor- und Zuname sowie einer gültigen E-Mail Adresse.</p>
+          <p>Secret Escapes behält sich das Recht vor, bei Verstoß gegen diese Teilnahmebedingungen, Teilnehmer vom Gewinnspiel auszuschließen. Gegebenenfalls wird der Gewinn nachträglich aberkannt und zurückgefordert.</p>
+          <p>Mitarbeiter von Secret Escapes, ihrer verbundenen Unternehmen sowie Gewinnspielpartner, einschließlich Angehörige der vorgenannten Gruppen, sind von der Teilnahme ausgeschlossen.</p>
+          <p>Der Gewinner ist für die erforderlichen Reisevorkehrungen, wie insbesondere gültigen Reisepass, internationaler Führerschein, Auslandskrankenversicherung etc. selbst verantwortlich. Weitere Hinweise hierzu finden Sie unter: <a href="https://www.southafrica.net/de/de/travel/category/nuetzliche-informationen/einreisebestimmungen" target="_blank">https://www.southafrica.net/de/de/travel/category/nuetzliche-informationen/einreisebestimmungen</a> .</p>
+          <p>Jegliche Haftung von South African Tourism ist in diesem Zusammenhang bis auf Vorsatz ausgeschlossen. Soweit eine Teilnahme aus Altersgründen untersagt ist, findet keine Gewinnausschüttung statt.</p>
+          <h4 class="core-title core-title--xs space--lg">Gewinnspiel/Verlosung</h4>
+          <div class="space--sm"></div>
+          <p>Das Gewinnspiel endet am 23.02.2020 um 23:59 Uhr</p>
+          <p>Der Gewinner wird per Losverfahren ermittelt und anschließend per E-Mail informiert.</p>
+          <p>Zur Verlosung stehen diverse Sach- und Wertpreise wie unten aufgeführt. Eine Angabe von Präferenzen ist ausgeschlossen.</p>
+          <p>Secret Escapes behält sich das Recht vor, das Gewinnspiel zu jedem Zeitpunkt ohne Vorankündigung zu beenden, wenn aus technischen oder rechtlichen Gründen eine ordnungsgemäße Durchführung nicht gewährleistet werden kann.</p>
+          <h4 class="core-title core-title--xs space--lg">Der Gewinn</h4>
+          <div class="space--sm"></div>
+          <p>Ein einzelner Gewinner erhält folgende Preise:</p>
+          <ol>
+            <li>7 Übernachtungen inklusive Frühstück im Doppelzimmer in Kapstadt, Südafrika – inklusive Flüge in der Economy Class ab München oder Frankfurt und dem Transfer vom Cape Town International Airport zum/vom Hotel. Die Reise kann ab dem 01.04.2020 und muss bis zum 31.03.2021 angetreten werden. Sie kann nur nach Verfügbarkeit gebucht werden. Hauptferienzeiten auf Anfrage. Ausschlusszeiten: 15.12.2020 bis 05.01.2021.</li>
+            <li>Die Nikon Z 50, inkl. zwei Objektive (dem Weitwinkelobjektiv NIKKOR Z DX 16–50 mm (1:3,5–6,3 VR) und Telezoomobjektiv NIKKOR Z DX 50–250 mm (1:4,5–6,3 VR))</li>
+          </ol>
+          <p>Secret Escapes wird mit der Aushändigung des Gewinns von allen Verpflichtungen freigestellt.</p>
+          <p>Je nach Gewinn werden diese in elektronischer Form als PDF Datei per E-Mail übermittelt oder durch Nikon auf dem Postwege versandt. Eventuell anfallende Versandkosten trägt Secret Escapes bzw. Nikon.</p>
+          <p>Die Vergabe des Gewinns an den Gewinner erfolgt per Zufallsprinzip durch den Veranstalter. Meldet sich der Gewinner nicht innerhalb von 5 Werktagen nach dem Absenden der Benachrichtigung schriftlich (mit seiner Anschrift, Telefonnummer, Geburtsdatum und seinem vollständigen Namen), so verfällt der Anspruch auf den Gewinn und es wird per Los ein neuer Gewinner ermittelt.</p>
+          <p>Der Gewinn wird ohne Rechnung ausgeliefert und es wird auch auf Wunsch keine Rechnung angefertigt.</p>
+          <h4 class="core-title core-title--xs space--lg">Datenschutz & E-Mail Werbung</h4>
+          <div class="space--sm"></div>
+          <p>Alle personenbezogenen Daten des Teilnehmers werden ausschließlich zum Zwecke der Durchführung und Abwicklung des Gewinnspiels verarbeitet. Secret Escapes ist berechtigt, die Daten der Gewinner an die Kooperationspartner zu übermitteln, um den Versand oder die Leistungserbringung der Gewinne zu ermöglichen.</p>
+          <p>Zusätzlich werden die E-Mail Adressen für den einmaligen Versand von E-Mail-Einladungen zum Secret Escapes Newsletter sowie zum Nikon Newsletter verwendet. Die Annahme dieser Einladung und die daraus resultierende Anmeldung zu einem oder beiden dieser Newsletter ist freiwillig. </p>
+          <p>Es steht dem Teilnehmer jederzeit frei, seine Teilnahme am Gewinnspiel/ an der Verlosung zu widerrufen.</p>
+          <h4 class="core-title core-title--xs space--lg">Störung im Ablauf </h4>
+          <div class="space--sm"></div>
+          <p>Der Veranstalter behält sich vor, das Gewinnspiel jederzeit unter Berücksichtigung der Interessen der Teilnehmer zu unterbrechen oder zu beenden, wenn technische Gründe seine ordnungsgemäße Fortsetzung unmöglich machen, oder das Spiel aus rechtlichen Gründen unzulässig ist. </p>
+          <p>Der Veranstalter hat das Recht, Teilnehmer von dem Gewinnspiel auszuschließen, die den Teilnahmevorgang oder das Gewinnspiel manipulieren bzw. dies versuchen und/oder die gegen die Spielregeln verstoßen. Dies gilt ebenso hinsichtlich Teilnehmern, die falsche Angaben zu ihrer Person machen. </p>
+          <p>Der Veranstalter haftet nur für Schäden, die vom Veranstalter oder einem ihrer Erfüllungsgehilfen vorsätzlich oder grob fahrlässig oder durch die Verletzung von Kardinalpflichten verursacht wurden. Dies gilt nicht für Schäden aus der Verletzung von Leben, Körper oder Gesundheit.</p>
+          <h4 class="core-title core-title--xs space--lg">Schlussbestimmungen / anwendbares Recht</h4>
+          <div class="space--sm"></div>
+          <p>Eine Barauszahlung der Gewinne oder eines etwaigen Gewinnersatzes ist ausgeschlossen.</p>
+          <p>Der Rechtsweg ist ausgeschlossen.</p>
+          <p>Sollten einzelne dieser Bestimmungen ungültig sein oder werden, bleibt die Gültigkeit der übrigen Nutzungsbedingungen hiervon unberührt.</p>
+        </div>
+        <div class="space--md"></div>
+    </div>

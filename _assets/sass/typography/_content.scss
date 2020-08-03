@@ -1,0 +1,67 @@
+// element styles for written content
+
+em      { font-style: italic; }
+strong  { font-weight: 600; }
+sup {
+  font-size: $s-1;
+  line-height: 0;
+  vertical-align: super;
+}
+
+// standard inline link style
+a[href]:not([class]) {
+  color: $orange;
+  @include transition;
+  &:hover { color: $orange-darker; }
+}
+
+.link {
+  &:hover { text-decoration: underline; }
+  &--underlined { text-decoration: underline; }
+}
+
+ol {
+  counter-reset: mycounter;
+  li {
+    display: flex;
+    list-style: none;
+    &:before {
+      content: counter(mycounter) ".";
+      counter-increment: mycounter;
+      padding-right: $s-6;
+    }
+  }
+  &.continuing-list {
+    counter-reset: none;
+    &--start { counter-reset: mycounter; }
+  }
+}
+
+.ol {
+  &--nested {
+    padding-left: $s2;
+    padding-bottom: $s2;
+  }
+  &--letters {
+    li:before { content: counter(mycounter, lower-alpha) "."; }
+  }
+}
+
+ul {
+  li {
+    display: flex;
+    list-style: none;
+    &:before {
+      content: "•";
+      padding-right: $s-3;
+      font-weight: 600;
+    }
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $grey-lightest;
+  margin: $s1 0;
+}

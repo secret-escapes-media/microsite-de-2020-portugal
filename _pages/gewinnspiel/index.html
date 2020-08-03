@@ -1,0 +1,65 @@
+---
+layout: competition
+id: gewinnspiel
+nav: true
+nav-order: 7
+nav-title: gewinnspiel
+title: Gewinnspiel
+
+banner:
+  title: Gewinnspiel
+  title-size: banner-title--xxl
+  bg-hero: "background-position: 75% center;"
+  title-sub:
+
+
+hotel:
+  title: "Der Gewinn: Longevity Health & Wellness Hotel"
+  sub-title: Meeresluft & Spa im&nbsp;Süden&nbsp;Portugals
+  content: >
+
+    <ul>
+      <li>7 Übernachtungen für 2 Personen des Longevity Health & Wellness Hotel, inklusive Flüge
+      </li>
+      <li>inkl. Frühstück, Zugang zum Fitnessstudio & Wellnessbereich (mit Infrarot-Sauna, Hamam, Eisfontäne, Epson-Salzkammer, Erlebnisduschen, Ruheraum, beheiztem Innenpool und Sensation-Innenpool).
+      </li>
+      <li> Zugang zum Longevity Vitality-Aktivprogramm (Yoga, Pilates, Stretching, Core Training, Tone & Fit, Jump, Fit Ball, Spaziergänge uvm.).
+      </li>
+    </ul>
+
+
+
+
+competition-form:
+  id: comp
+  post-url: https://getform.io/f/1d492da7-b3c5-4a17-8680-0c029c3df8b6
+  expiry-date: 2050-01-01
+  fields:
+    - id: vorname
+      type: text
+      label: Vorname
+      required: true
+    - id: name
+      type: text
+      label: Name
+      required: true
+    - id: email
+      type: email
+      label: Email
+      required: true
+    - id: qualify
+      type: radio
+      label: Wohnen Sie in Deutschland und sind Sie über 18?
+      required: true
+      options:
+        - id: qualify-true
+          label: 'Ja'
+          value: 'yes'
+        - id: qualify-false
+          label: 'Nein'
+          value: 'no'
+  submit: Zum Video-Upload
+  terms: >
+    Mit dem Absenden stimmen Sie unseren
+    <a id="tracking-poi-agb" class="js-open-modal link--underlined" data-modal-group="agb" data-open-modal="agb">AGBs</a>  zu.
+---

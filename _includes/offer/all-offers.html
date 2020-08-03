@@ -1,0 +1,23 @@
+{% include offer/variables.html %}
+<div class=" vpad--xl bg--light text--center" >
+
+  <div class="container ">
+    <div class="row row--xl-6-6 row--gutters-md">
+      {% for offer in offers-by-expires %}
+        <div class="col">
+          {% include offer/offer.html %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="space--xxl"></div>
+  <a href="#" class="btn btn--orange">Nach oben</a>
+
+</div>
+
+<script>
+
+//myDate
+
+</script>

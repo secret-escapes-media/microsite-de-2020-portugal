@@ -1,0 +1,19 @@
+<!-- offer variables just to make the loops more readable -->
+
+<!-- all offers -->
+{% assign offers = site.data.offers %}
+
+<!-- offers by saving -->
+{% assign offers-by-saving = offers | sort: 'saved' | reverse %}
+
+<!-- offers by expire date -->
+{% assign offers-by-expires = offers | sort: 'expires' %}
+
+<!-- offers by price -->
+{% assign offers-by-price = offers | sort: 'price' %}
+
+
+{% assign offers-show = offers | where: 'show-offer', 'true'   %}
+
+
+{% assign offers-rest = offers | where: 'show-offer', 'false'   %}

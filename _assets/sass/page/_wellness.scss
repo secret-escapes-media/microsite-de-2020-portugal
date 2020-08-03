@@ -1,0 +1,109 @@
+// includes needed for these styles only
+@import
+  // core
+  '../core/breakpoints',
+  '../core/colours',
+  '../core/z-index',
+  '../core/core'
+;
+
+.slider {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    // same code as bg-img to keep image ratios
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 56.666666666667%;
+    //padding-top: 100%; // 1-1
+    @include bp($lg)  { padding-top: 100%; } // 3-2
+    @include bp($xl) { padding-top: 70%; } // 16-9
+    .no-js & { display: none; }
+  }
+  &__images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-content;
+    background-color: $grey-lighter;
+    background-image: url('../img/icons/loading.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    .no-js & { position: relative; }
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include background-attributes();
+    $transition-time: .25s;
+    transition: opacity $transition-time ease;
+    &.is-visible {
+      opacity: 1;
+      z-index: $z-content-upper;
+    }
+    &.is-not-visible {
+      opacity: 0;
+      z-index: $z-content;
+      transition-delay: ($transition-time / 2);
+    }
+    .no-js & { position: relative; }
+  }
+  &__btn-wrap {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: auto;
+    width: 100%;
+    bottom: 0;
+    z-index: $z-content-overlay;
+    display: block;
+    line-height: 0;
+    .no-js & { display: none; }
+  }
+  &__copyright {
+      display: inline;
+      position: absolute;
+      line-height: 40px;
+      margin-left: 10px;
+      letter-spacing: -.3px;
+      text-shadow: 0 0 8px $black;
+  }
+  &__btn {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-size: auto 15px;
+    background-color: rgba($black, .75);
+    background-repeat: no-repeat;
+    background-position: center;
+    @include transition;
+    @include bp(lg){
+      height: 50px;
+      width: 50px;
+      background-size: auto 20px;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $black;
+      border-color: $black; // this just removes the border when the right arrow is on hover
+    }
+    &--left {
+      background-image: url('../img/icons/arrow-left.svg');
+      background-position: 45% 50%;
+    }
+    &--right {
+      border-left: 1px solid rgba($black, .5);
+      background-image: url('../img/icons/arrow-right.svg');
+      background-position: 55% 50%;
+    }
+    &:hover + &--right { border-color: $black; } // this just removes the border when the left arrow is on hover
+  }
+}

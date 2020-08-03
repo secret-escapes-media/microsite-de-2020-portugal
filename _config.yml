@@ -1,0 +1,24 @@
+# Site settings
+title: Portugal
+client:
+  name: Ein Ort, der Sehnsucht weckt
+  link: "https://www.visitportugal.com/de"
+core-se-link: https://www.secretescapes.de/aktuelle-angebote
+description: >
+  Portugal hat viele Gesichter: Neben rauen Küstenabschnitten im Süden bis hin zur grünen Dünen­landschaft im Norden. Die Lage am Atlantik hat das Land der Eroberer nicht nur geschichtlich geprägt.
+
+# file paths
+url:     "http://mp.secretescapes.com" # the base hostname & protocol for your site
+baseurl: "/de/2020/portugal" # the subpath of your site, e.g. /blog/
+img:     "/de/2020/portugal/_assets/img"
+css:     "/de/2020/portugal/_assets/css"
+js:      "/de/2020/portugal/_assets/js"
+
+
+# Build settings
+markdown: kramdown
+exclude: [node_modules, gulpfile.js, package.json, package-lock.json, js/script.js]
+keep_files: [_assets]
+sass:
+    sass_dir: css
+    style: compressed

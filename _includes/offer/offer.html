@@ -1,0 +1,50 @@
+
+
+
+
+
+<div class="offer" id="bv-toggle">
+
+  <a class="offer__link" href="{{offer.link}}{{site.se-tracking-link}}" target="_blank"><span class="btn btn--orange">Zum Angebot</span></a>
+
+  <div class="bg-img bg-img--3-2" style="background-image: url('{{offer.image}}')">
+    {% if offer.tag  %}
+      <img class="flight-tag" src="{{site.img}}/icons/tag-{{offer.tag}}.png">
+    {% endif %}
+  </div>
+
+
+
+  <div class="offer__content text text--xl text--left">
+
+    <h3 class="offer__description text--xxl text--bold">{{offer.title}}</h3>
+    <h4 class="offer__location">{{offer.location}}</h4>
+    <div class="offer__description text--normal">{{offer.description}}</div>
+
+    <div class="offer__bottom">
+
+      <div class="offer__bottom-left">
+
+        {% if offer.saved %}
+          <div class="offer__saved">
+            <div class="offer__saved-label text--normal">Sparen Sie bis zu</div>
+            <div class="offer__saved-percent ">{{offer.saved}}<span style="font-size: 20px;">%</span></div>
+          </div>
+          <div class="offer__separator"></div>
+        {% endif %}
+
+        <div class="offer__details text--normal">
+          <div>Ab <span class="offer__price ">{{offer.price}}€</span></div>
+          <div class="text--md ">{{offer.price-description}}</div>
+        </div>
+
+      </div>
+      <div class="offer__bottom-right">
+        <div class="offer__arrow"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

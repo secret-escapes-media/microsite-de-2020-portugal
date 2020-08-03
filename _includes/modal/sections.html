@@ -1,0 +1,37 @@
+<!--
+  creates modals for all of the sections that appear on the single page
+  creates a series modal so user can nav between each poi in the current section
+  will also load in normal modals that appear in /data/modals.yml
+-->
+
+<div class="js-modal modal__bg is-closed">
+  <div class="modal__wrap">
+
+
+
+    {% for section in site.data.sections %}
+
+        <div class="modal modal--standard is-closed" data-modal-id="{{section.id}}" data-modal-group="{{section.group}}">
+          <div class="js-close-modal modal__close"></div>
+              {% if section.gallery | where: 'gallery', 'true' %}
+          <div class="js-modal-nav modal__nav modal__nav--next" data-nav-direction="next"></div>
+          <div class="js-modal-nav modal__nav modal__nav--previous" data-nav-direction="previous"></div>
+
+          <div class="bg-img--4-3">  <video poster=""  controls style="width:80vw; max-width:1024px;">
+             <source src="{{site.img}}/content/abstimmung/video{{forloop.index}}.mp4" type="video/mp4"></video>
+          </div>
+      {% endif %}
+          <div class="modal__content content-spacing text--xxl">
+          <div class="text--bold text--lg ">{{section.title}}</div>
+          <div class=" text--md ">{{section.credit}}</div>
+          <div class=" text--md ">{{section.description}}</div>
+          </div>
+        </div>
+
+
+    {% endfor %}
+
+
+
+  </div>
+</div>

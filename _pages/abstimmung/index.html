@@ -1,0 +1,64 @@
+---
+layout: abstimmung
+id: abstimmung
+nav: false
+nav-order: 7
+nav-title: abstimmung
+title: Abstimmung
+
+banner:
+  title: Abstimmung
+  title-size: banner-title--xxl
+  bg-hero: "background-position: 75% center;"
+  title-sub:
+
+
+
+competition-form:
+  id: comp
+  post-url: https://getform.io/f/88e0533f-e94a-4446-a52a-7ae0b843e8bd
+  expiry-date: 2050-01-01
+  fields:
+    - id: video
+      type: radio
+      label: Welches Video gefiel Ihnen am besten?
+      required: true
+      options:
+        - id: video-01
+          label: '1'
+          value: '1'
+        - id: video-02
+          label: '2'
+          value: '2'
+        - id: video-03
+          label: '3'
+          value: '3'
+
+    - id: vorname
+      type: text
+      label: Vorname
+      required: true
+    - id: name
+      type: text
+      label: Name
+      required: true
+    - id: email
+      type: email
+      label: Email
+      required: true
+    - id: qualify
+      type: radio
+      label: Wohnen Sie in Deutschland und sind Sie über 18?
+      required: true
+      options:
+        - id: qualify-true
+          label: 'Ja'
+          value: 'yes'
+        - id: qualify-false
+          label: 'Nein'
+          value: 'no'
+  submit: Absenden
+  terms: >
+    Mit dem Absenden stimmen Sie unseren
+    <a id="tracking-poi-agb" class="js-open-modal link--underlined" data-modal-group="agb" data-open-modal="agb">AGBs</a>  zu.
+---

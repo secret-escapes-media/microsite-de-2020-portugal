@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+
+<div class=" vpad--xxl {{page.colour}} " >
+  <div class="container">
+    <div class="width width--lg" >
+       <div class="text text--xl  text--justify"><p class="bv-subhead ">{{page.intro}}</p></div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="space--xxl"></div>
+{% for section in site.data[page.id] %}
+<div class="container bg--white" style="border-bottom: 8px solid #f1f1f1;">
+
+  <div class="row row--3-3-3-3 row--gutters">
+
+    <div class="col--lg--3 col--top bv-img-insider boxpad--lg">
+      <div class="bg-img bg-img--1-1 bv-img-circle " style="background-image: url('{{site.img}}/content/{{page.id}}/{{section.img}}.jpg'); margin-top:0px;"></div>
+    </div>
+    <div class="col col--9 bv-mob-center boxpad--lg">
+
+      <h3 class=" title title--lg ">{{section.title}}</h3>
+        <div class="space--sm"></div>
+      <div class=" text text--xxl text">{{section.location}}</div>
+      <div class="space--md"></div>
+
+      <div class="bv-content text  text--xxl text--left">
+        <p class=" text text--sm text--normal ">{{section.copyright}}</p>
+
+        {% for tips in section.tips.items %}
+          <h3 class=" text text--xl text--normal text--bv-blue text--upper">{{tips.question}}?</h3>
+          <div class="space--xs"></div>
+          <div class=" text text--lg bv-linehight">{{tips.answer}}</div>
+          <div class="space--md"></div>
+
+
+        {% endfor %}
+
+      </div>
+
+      <a class="btn btn--bv-red bv-collapsible ">Tipps</a>
+
+    </div>
+
+  </div>
+  <div class="space--xl"></div>
+</div>
+
+
+  {% endfor %}

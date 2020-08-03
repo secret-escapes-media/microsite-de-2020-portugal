@@ -1,0 +1,66 @@
+.btn {
+
+  font-family: $sans;
+  position: relative;
+  display: inline-block;
+  padding: $s2 $s5;
+  color: $white;
+  font-weight: 700;
+  font-size: $s2/1.5;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  line-height: 1.33;
+  border-radius: 3px;
+  cursor: pointer;
+  @include transition;
+  &--sm { padding: $s1 $s4; font-size: $s-2; }
+  &--lg { padding: $s3 $s8; font-size: $s-1; }
+  &--orange { background-color: $orange;
+    &:hover { background-color: $orange-dark; } }
+
+  &--bv-blue { font-family: $font-title-01; background-color: $bv-blue; font-size: 13px;
+    &:hover { background-color: $bv-blue; }}
+
+
+  &--bv-red { font-family: $font-title-01;
+    background-color: $bv-red;
+    font-size: 12px;
+    border-radius: 0px;
+    padding: $s2 $s5 $s1;
+    border-bottom: 3px solid $bv-darkred;
+    &:hover { background-color: $bv-darkred; }}
+
+
+  &--outline {
+    color: inherit;
+    &:before {
+      // button border within original padding
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: inherit;
+      @include transition;
+    }
+  }
+  &--outline-blue {
+    border: 1px solid $bv-blue;
+    color: $bv-blue;
+    &:hover {
+      background-color: $bv-blue;
+      color: $white;
+    }
+  }
+  &--outline-orange {
+    &:before { border-color: $orange; }
+    &:hover {
+      background-color: $orange;
+      &:before { border-color: $orange; }
+    }
+  }
+}

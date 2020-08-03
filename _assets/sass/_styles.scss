@@ -1,0 +1,376 @@
+// general styles for the project that wouldn't be a reuseable component
+
+
+/* ==========================================================================
+   Initial Letter
+========================================================================== */
+
+$font-size: 1.15rem;
+$cap-size: $font-size * 5.4;
+
+
+
+// Wrap in @supports with `not` operator
+@supports (not(initial-letter: 5)) and (not(-webkit-initial-letter: 5)) {
+    .bv-subhead::first-letter {
+        //color:  $bv-blue;
+        font-size: $cap-size;
+        float: left;
+        line-height: .7;
+        margin: 9px 15px 5px -3px;
+    }
+}
+
+// Progressive enhancements for supported browsers
+@supports (initial-letter: 5) or (-webkit-initial-letter: 5) {
+    .bv-subhead:nth-of-type(1)::first-letter {
+        -webkit-initial-letter: 3;
+        initial-letter: 3;
+
+    }
+}
+
+.bv-subhead::first-letter {
+    //color: $bv-blue;
+    font-family: $font-serif;
+}
+
+
+
+
+/* ==========================================================================
+   Slider
+   ========================================================================== */
+
+.bv-center{
+  /*text-align: center;
+	width: 60%;
+ 	//height: 50%;
+  margin: auto;
+  position: absolute;
+  //background-color: #00AEE2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;*/
+}
+
+.bv-slider{
+  position:relative;
+  margin:0 auto;
+  top:0px;
+  left:0px;
+  width: 100%;
+  //height: 93%;
+  //padding-bottom: 16%!important;
+  overflow:hidden;
+  visibility:hidden;
+}
+
+
+.bv-slides-wrap{
+  cursor: pointer;
+  position:relative;
+  top:0px;
+  left:0px;
+  //width: $md;
+  //height:100%;
+  overflow:hidden;
+}
+
+.bv-slides{
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.bv-slider-title-wrap{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  max-height: 900px;
+  color: $white;
+
+  @include bp($lg){
+    height: 90%;
+    min-height: 950px;
+    max-height: none;
+  }
+}
+.bv-slider-title{
+  margin-top: 29vh;
+  width: 75%;
+  z-index: 99;
+
+  @include bp($lg){
+    margin-top: 8vh;
+    width: 90%;
+    z-index: 99;
+  }
+  @include bp($xl){
+    margin-top: 0;
+    width: 90%;
+    z-index: 99;
+  }
+}
+/*jssor slider loading skin spin css*/
+.jssorl-009-spin img {
+   animation-name: jssorl-009-spin;
+   animation-duration: 1.6s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+ }
+   @keyframes jssorl-009-spin {
+     from { transform: rotate(0deg); }
+     to { transform: rotate(360deg); }
+   }
+
+ /*jssor slider bullet skin 051 css*/
+.jssorb051 .i {position:absolute;cursor:pointer;}
+.jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
+.jssorb051 .i:hover .b {fill-opacity:1;}
+.jssorb051 .iav .b {fill-opacity: 1;}
+.jssorb051 .i.idn {opacity:.3;}
+
+/*jssor slider arrow skin 051 css*/
+.jssora051 {display:block;position:absolute;cursor:pointer;}
+.jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+.jssora051:hover {opacity:.8;}
+.jssora051.jssora051dn {opacity:.5;}
+.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+.bv-slider-arrow{
+  width:40px;
+  height:40px;
+  //top:0px;
+  margin-bottom: 10px!important;
+  z-index: 99;
+  @include bp($lg){
+    width:55px;
+    height:55px;
+}
+  &--left{left:0;}
+  &--right{right:0;}
+}
+.bv-slider-arrows-viewbox{
+  /*position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;*/
+}
+
+
+.pt-iframe-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; // 16:9 ratio
+  background-color:#000;
+}
+
+.pt-iframe-ratio iframe {  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+}
+
+/* ==========================================================================
+   Dividers & Alignment
+   ========================================================================== */
+
+   .bv-title-divider::after{
+     content: url(../img/icons/divider-w.svg);
+     display: block;
+     margin-top: 18px;
+     margin-bottom: -2px;
+     transform: scale(.8);
+
+     @include bp($sm) {
+       content: url(../img/icons/divider-w.svg);
+       display: block;
+       margin-top: 10px;
+       transform: scale(.8);
+     }
+
+     @include bp($md) {
+       content: url(../img/icons/divider-w.svg);
+       display: block;
+       margin-top: 18px;
+       transform: scale(.6);
+
+     }
+
+     @include bp($xl) {
+       content: url(../img/icons/divider-w.svg);
+       display: block;
+       margin-top: -15px;
+       transform: scale(.45);
+
+     }
+   }
+
+.bv-dividerline{
+  border-bottom: 1px solid rgba($grey-dark, .2);
+}
+
+
+.bv-headline-divider::after {
+    content: ('~');
+    display: block;
+    color: $bv-blue;
+    font-size: $s8;
+    margin: -15px 0 -45px 0px;
+  }
+
+   .bv-lineheight{
+    line-height: 1.2em;
+   }
+
+   .bv-mob-left {
+     text-align: center;
+   }
+
+   @media only screen and (max-width: 768px) {
+
+     .bv-mob-left {
+     text-align: left;
+     }
+   }
+
+   .bv-mob-center {
+      text-align: left;
+    }
+
+    @media only screen and (max-width: 799px) {
+
+      .bv-mob-center {
+      text-align: center;
+      margin-left: 0;
+      }
+    }
+
+
+/* ==========================================================================
+   Parallax
+   ========================================================================== */
+
+.bv-parallax{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+.bv-remove-bg{
+  background-image: none!important;
+}
+
+.bv-parallax{
+      background-attachment: scroll;
+      background-size: cover;
+
+  }
+}
+
+
+
+/* ==========================================================================
+ Collapsible
+========================================================================== */
+
+
+.bv-collapsible {
+  cursor: pointer;
+}
+
+.bv-collapsible:after {
+  content: ' ansehen ';
+}
+
+.bv-active:after {
+  content: ' schliessen ';
+}
+
+.bv-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+}
+
+
+
+/* ==========================================================================
+Insidertipps
+========================================================================== */
+
+.bv-img-insider{
+  width: 75%;
+  max-width: $lg;
+
+  @include bp($xl) {
+    width: 25%;
+    max-width: none;
+  }
+}
+
+.bv-img-circle {
+  border-radius: 500px;
+  border: 4px $white solid;
+}
+
+/* ==========================================================================
+badges
+========================================================================== */
+
+.bv-badge  {
+  position: absolute;
+  top: $s-2;
+  left: $s-2;
+  display: block;
+  width: 60%;
+
+  @include bp($sm){
+    top: $s4;
+    left: $s4;
+    width: 186px;
+  }
+  &--hero { // max-width for this is about 150x46px
+    position: absolute;
+    display: block;
+      top: $s10;
+      right: 5%;
+      width: 120px;
+
+    @include bp($xxl){
+      top: $s12;
+      right: 5%;
+      width: 180px;
+      }
+  }
+}
+
+
+
+/* ==========================================================================
+Flight/Config tag - Offers
+========================================================================== */
+
+.flight-tag {
+  position: absolute;
+  top: $s-2;
+  left: $s-2;
+  display: block;
+  width: 50%;
+  @include bp($sm){
+    top: $s0;
+    left: $s0;
+    width: 146px;
+  }
+}

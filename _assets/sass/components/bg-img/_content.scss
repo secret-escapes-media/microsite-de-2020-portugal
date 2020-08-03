@@ -1,0 +1,70 @@
+// styles for adding titles, links and hover effects for .bg-image
+
+.bg-img {
+  // Vertically centered content in bg-image
+  //background-color: $grey-dark;
+  @include transition;
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-content-overlay;
+    cursor: pointer;
+  }
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-content-upper;
+    //display: flex;
+    align-items: baseline;
+    justify-content: center;
+    color: $white;
+    //text-align: center;
+    @include page-padding;
+  }
+  &__bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-content;
+    background-color: rgba($black,.2);
+    @include transition;
+  }
+  &:hover &__bg-overlay { background-color: rgba($turquoise,.8); }
+
+  &__play {
+    $play-button-width-sm: 80px;
+    $play-button-width: 160px;
+    width: $play-button-width-sm;
+    height: $play-button-width-sm;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$play-button-width-sm/2;
+    margin-left: -$play-button-width-sm/2;
+
+    background-image: url('../img/icons/play.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include bp($lg){
+      width: $play-button-width;
+      height: $play-button-width;
+      margin-top: -$play-button-width/2;
+      margin-left: -$play-button-width/2;
+    }
+  }
+  &--zoom {
+    @include transition();
+    transform: scale(1);
+  }
+  &:hover &--zoom { transform: scale(1.1); }
+}

@@ -1,0 +1,48 @@
+// general modifier styles for text
+
+.text {
+  font-family: $font-title-01;
+  // sizes
+  &--xxxxl { font-size: 2.2rem; line-height: 1.6; letter-spacing: 0; }
+  &--xxxl { font-size: 1.9rem; line-height: 1.6; letter-spacing: 0; }
+  &--xxl { font-size: 1.6rem; line-height: 1.5; letter-spacing: 0; }
+  &--xl  { font-size: 1.25rem; line-height: 1.6; letter-spacing: 0; }
+  &--lg  { font-size: 1.15rem; letter-spacing: 0; }
+  &--md  { font-size: 1rem; letter-spacing: 0; }
+  &--sm  { font-size: .9rem; }
+
+  // styles
+  &--italic       { font-style: italic; }
+  &--light        { font-weight: 200; }
+  &--normal       { font-weight: 400; }
+  &--medium         { font-weight: 500; }
+  &--bold         { font-weight: 600; }
+  &--bolder       { font-weight: 700; }
+  &--wide-kern    { letter-spacing: .25em; }
+  &--wide-kern-lg { letter-spacing: .5em; }
+  &--upper        { text-transform: uppercase; }
+  &--serif        { font-family: $font-serif; }
+  &--serif-italic { font-family: $font-serif; font-size: 1.65rem; font-style: italic;  }
+  &--serif-lg     { font-family: $font-serif; font-size: 3rem; }
+  &--serif-md     { font-family: $font-serif; font-size: 2.2rem; }
+
+
+  // colours
+  &--white { color: $grey-lightest; }
+  &--black { color: $grey-dark; }
+  &--bv-red { color: $bv-red; }
+  &--bv-blue { color: $bv-blue; }
+
+
+  // alignment
+  &--left   { text-align: left; }
+  &--right  { text-align: right; }
+  &--center { text-align: center; }
+  &--justify{ text-align: left; }
+  @include bp($lg) {
+    &--bp-left   { text-align: left; }
+    &--justify{ text-align: justify; }
+    &--bp-right  { text-align: right; }
+    &--bp-center { text-align: center; }
+  }
+}

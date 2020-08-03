@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+
+
+<div class=" vpad--xxl bg--bv-blue" >
+  <div class="container">
+    <div class="width width--lg " >
+       <div class="text text--xl text--white text--justify"><p class="bv-subhead">{{page.intro}}</p></div>
+    </div>
+  </div>
+</div>
+
+
+{% for section in site.data[page.id] %}
+    <div id="{{page.id}}" class="harvey{% cycle '', ' harvey--swap' %}">
+      <div class="harvey__img" style="background-image: url('{{site.img}}/content/{{page.id}}/{{section.img}}.jpg');">
+        {% if section.badge %}
+          <img class="bv-badge" src="{{site.img}}/content/{{page.id}}/badge{{forloop.index}}.png" alt="{{section.title}}">
+        {% endif %}
+      </div>
+      <div class="harvey__text boxpad--lg ">
+        <h2 class="text text--serif text--xxxxl text--bv-blue text--bold">{{section.title}}</h2>
+        <div class="space--md"></div>
+        <div class="text text--xl text--justify">{{section.description}}</div>
+        <div class="space--lg"></div>
+
+        {% if section.cta %}
+          <a href="{{section.cta}}" target="_blank" class="btn btn--outline-blue" >Mehr erfahren</a>
+        {% endif %}
+        {% if section.url %}
+          <a href="{{section.url}}" target="_blank" class="btn btn--outline-blue" >Angebot in der Nähe</a>
+        {% endif %}
+
+
+
+      </div>
+    </div>
+ {% endfor %}

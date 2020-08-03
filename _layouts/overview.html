@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<script>
+  var elem = document.getElementById("banner-content");
+  var elem2 = document.getElementById("jssor_1");
+  var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+
+  if (isIE11 === true) {
+    console.log(isIE11);
+        elem2.parentNode.removeChild(elem2);
+  }else{
+    console.log(elem2);
+      elem.parentNode.removeChild(elem);
+  }
+</script>
+
+
+<div class=" vpad--xxl {{page.colour}}">
+  <div class="container">
+    <div class="width width--xl">
+       <div class="text text--xl  text--justify"><p class="bv-subhead ">{{page.intro}}</p></div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container vpad--xxl">
+
+  {% assign destinations = site.html_pages | where: 'content-pages', 'true'  | sort:'nav-order' %}
+
+  {% for destination in destinations %}
+
+  <div class="bob {% cycle '', 'bob--swap' %}">
+    <div class="bob__img">
+      <a href="{{site.baseurl}}{{destination.url}}" class="bg-img bg-img--4-3" style="background-image: url('{{site.img}}/content/{{destination.id}}.jpg');"></a>
+    </div>
+    <div class="bob__text">
+      <h3 class="text text--serif text--xxxxl text--bv-blue text--bold">{{destination.title}}</h3>
+      <p class="text text--lg">{{destination.summary}}</p>
+      <div class="space--lg"></div>
+      <a href="{{site.baseurl}}{{destination.url}}" class="btn btn--bv-red">Mehr erfahren</a>
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+{% include page/competition-banner.html %}

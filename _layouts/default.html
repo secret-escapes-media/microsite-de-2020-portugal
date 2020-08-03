@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include page/head.html %}
+
+  <body class="no-js">
+
+    {% include components/tracking.html %}
+
+    {% include page/header.html %}
+
+    {% if page.id == 'overview' %}
+    {% include page/banner-slider.html %}
+    {% include page/banner.html %}
+    {% else %}
+    {% include page/banner.html %}
+    {% endif %}
+
+
+    <div class="content-spacing section-spacing  ">
+      {{ content }}
+    </div>
+
+    {% include page/footer.html %}
+
+    {% include modal/sections.html %}
+
+
+
+
+  </body>
+
+</html>
