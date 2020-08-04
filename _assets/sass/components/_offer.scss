@@ -1,23 +1,33 @@
-// Offer block styles
+// Sale block styles
 
 $circle-height: 3.4rem; // height for arrow and saved number
-$offer-max-width: 600px;
+$offer-max-width: 560px;
 
 .offer {
-  font-family: $sans;
   position: relative;
   width: 100%;
   max-width: $offer-max-width;
   margin-left: auto;
   margin-right: auto;
+  background-color: $white;
+  border-radius: 3px;
+  @include depth(2px);
+  &-hover:hover { @include depth(4px); }
+  &__title {
+    font-size: $s2;
+    letter-spacing: 0;
+    font-weight: 600;
+    line-height: 1.25;
+    font-family: $serif;
+    margin-bottom: $s-4;
+  }
   &__link {
-    font-family: $sans;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: $z-content-upper;
+    z-index: $z-overlay;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,45 +37,53 @@ $offer-max-width: 600px;
     @include transition;
     &:hover {
       opacity: 1;
-      background-color: rgba($grey-darkest,.33);
+      background-color: rgba($grey-darkest,.5);
       color: $white;
       .touch & { opacity: 0; }
     }
   }
-  &__content {
-    font-family: $sans;
-    padding: $s3;
-    /*border-left: 1px solid $grey-lighter;
-    border-right: 1px solid $grey-lighter;*/
-    border-bottom: 2px solid $grey-lighter;
-    background-color: $white;
-  }
-  &__description {
-    font-family: $sans;
-    //font-weight: 500;
-    color: $grey;
-  }
-  &__location {
-    font-family: $sans;
-    margin-top: .9em;
-    margin-left: 1.5em;
-    margin-bottom: .8em;
-    text-indent: -1.5em;
-    font-size: 0.8em;
-    line-height: 1.5;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  &__expires {
+    position: absolute;
+    z-index: $z-content-upper;
+    top: $s0; left: $s0;
     font-weight: 600;
-    color: $grey;
+    color: $white;
     &:before {
       content: "";
       display: inline-block;
-      height: 1.5em;
-      width: 1.05em;
-      margin-right: .5em;
-      margin-bottom: .2em;
+      height: 15px;
+      width: 15px;
+      margin-right: .4em;
+      margin-bottom: .25em;
       vertical-align: middle;
-      background-image: url( "../img/icons/map-pin.svg" );
+      background-image: url( "../img/icons/clock.svg" );
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-size: contain;
+    }
+  }
+  &__content {
+    padding: $s2;
+    border-left: 1px solid $grey-lighter;
+    border-right: 1px solid $grey-lighter;
+    border-bottom: 1px solid $grey-lighter;
+    background-color: $white;
+  }
+  &__location {
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 13px;
+      width: 9px;
+      margin-right: .4em;
+      margin-bottom: .25em;
+      vertical-align: middle;
+      background-image: url( "../img/icons/location.svg" );
       background-position: center;
       background-repeat: no-repeat;
       background-size: 100%;
@@ -73,17 +91,15 @@ $offer-max-width: 600px;
     }
   }
   &__bottom {
-    font-family: $sans;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: $s2;
+    padding-top: $s0;
     &-right {
       margin-left: auto;
       align-self: flex-end;
     }
     &-left  {
-      font-family: $sans;
       display: flex;
       align-items: center;
       width: 100%; // needed for ie11
@@ -91,78 +107,36 @@ $offer-max-width: 600px;
       margin-right: auto;
     }
   }
-  &__arrow {
-    font-family: $sans;
-    display: none;
-    width: $circle-height;
-    height: $circle-height;
-    min-width: $circle-height;
-    min-height: $circle-height;
-    margin-left: $s-3;
-    border: 1px solid $orange;
-    border-radius: $circle-height;
-    background-repeat: no-repeat;
-    background-image: url('../img/icons/arrow-right-orange.svg');
-    background-size: auto ($circle-height/2.25);
-    background-position: 52% center;
-  }
-  &__saved {
-    display: inline-block;
-    text-align: center;
-    &-percent {
-      font-family: $sans;
-      display: inline-block;
-      width: $circle-height;
-      height: $circle-height;
-      margin-left: $s-6;
-      padding-top: $s0/4;
-      text-align: center;
-      color: #fff;
-      font-weight: 500;
-      font-size: $s3;
-      //letter-spacing: .1rem;
-      //line-height: $circle-height;
-      background-color: $orange;
-      border-radius: $circle-height;
-    }
-  }
-  &__details {
-    display: inline-block;
-  }
-  &__separator {
-    display: inline-block;
-    align-self: stretch;
-    width: 1px;
-    max-width: 1px;
-    margin-left: $s0;
-    margin-right: $s0;
-    background-color: $grey-lighter;
-  }
-  &__price {
+  &__price,
+  &__discount {
     color: $orange;
     font-size: $s2;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1;
-    letter-spacing: 0;
-  }
-  @include bp($sm) {
-    &__arrow { display: block; }
+    letter-spacing: -.02em;
   }
   @include bp($md) {
     &__bottom-right { align-self: center; }
-    &__saved        { min-width: 130px; } // bit of a magic number, basically keeps the saved label & percent on the same line
-    &__saved-label  { display: inline-block; }
   }
 
-  // dark offer card styles
-   &#{&}--dark &__content {
-     border-left: 0;
-     border-right: 0;
-     border-bottom: 0;
-     background-color: lighten($grey-darkest,4);
-   }
-   &#{&}--dark &__separator           { background-color: $grey-dark; }
-   &#{&}--dark &__location            { color: $grey-lighter;}
-   &#{&}--dark &__content .core-title { color: $white;}
+}
 
+
+.offers-loading {
+  height: $s6;
+  width: $s6;
+  position: relative;
+  text-indent: -9999px;
+  margin: auto;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/icons/loading.svg');
+  transform-origin: center;
+  animation: spin 2s infinite linear;
+  @keyframes spin {
+    from {transform:rotate(360deg);}
+    to {transform:rotate(0deg);}
+  }
 }
