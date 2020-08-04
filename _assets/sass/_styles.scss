@@ -334,6 +334,7 @@ badges
   top: $s-2;
   left: $s-2;
   display: block;
+  border: 2px $white solid;
   width: 60%;
 
   @include bp($sm){
