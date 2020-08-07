@@ -12,8 +12,10 @@
 
       - id: 1
         question: "Was müssen Sie tun"
-        answer: "Schicken Sie uns ein kurzes - gerne kreatives - Video, in dem Sie uns verraten, warum Portugal Ihr persönlicher Sehnsuchsort ist und worauf Sie sich am meisten bei einer Portugal-Reise freuen. Wichtig: das Video darf nicht länger als 2 Minuten sein und sollte im Querformat vorliegen. Deadline für die Teilnahme: 16.08.2020. Weitere Teilnahmebedingungen."
+        answer: >
+          Schicken Sie uns ein kurzes - gerne kreatives - Video, in dem Sie uns verraten, warum Portugal Ihr persönlicher Sehnsuchsort ist und worauf Sie sich am meisten bei einer Portugal-Reise freuen.
+          <ul class="text--bolder" style="padding:20px 0 0 20px;"><li>Wichtig: das Video darf nicht länger als 2 Minuten sein und muss im Querformat vorliegen.</li> <li>Teilnahmeschluss ist der 06.09.2020. </li><li> Weitere &nbsp;<a id="tracking-poi-agb" class="js-open-modal link--underlined" data-modal-group="agb" data-open-modal="agb">Teilnahmebedingungen</a> </li></ul>
 
       - id: 2
         question: "Wie wird der Gewinner ermittelt"
-        answer: "Eine Jury wählt die besten 3 Spots aus, welche wir für kurze Zeit veröffentlichen. Aus dieser Shortlist wählen dann Sie, unsere Mitglieder, Ihren Lieblingsclip. Der glückliche Gewinner reist mit einer Begleitperson für 7 Tage in den Süden Portugals. Wir freuen uns auf Ihre Beiträge!"
+        answer: "Eine Jury wählt die besten 3 Spots aus, welche wir für kurze Zeit veröffentlichen. Aus dieser Shortlist wählen dann Sie, unsere Mitglieder, Ihren Lieblingsclip. Der glückliche Gewinner reist mit einer Begleitperson für 7 Tage in den Süden Portugals. <strong>Wir freuen uns auf Ihre Beiträge!</strong>"

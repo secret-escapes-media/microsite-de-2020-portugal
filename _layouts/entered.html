@@ -3,25 +3,53 @@
 
   {% include page/head.html %}
 
+
   <body class="no-js">
 
     {% include components/tracking.html %}
+    {% include page/header.html %}
 
-    <div class="content-spacing section-spacing">
-      <div class="container text--center">
-        <div class="width width-lg vpad--xxxl">
-          <h1 class="title title--md">{{page.title}}</h1>
-            <div class="space--xs"></div>
-          <div class="title title--xs">{{page.intro}}</div>
-            <div class="space--md"></div>
-            <h1 class="title title--xl">Viel Glück!</h1>
-          <div class="space--xxl"></div>
-          <a href="{{page.cta.link | liquify}}" class="btn btn--orange">{{page.cta.text}}</a>
-            <div class="space--xs"></div>
+    <div class="banner" id="banner-content" style="height: 70%;">
+      <div class="banner__bg bv-parallax" style="background-image: url('{{site.img}}/content/gewinnspiel/hero.jpg'); {{page.banner.bg-pos}}"></div>
+
+      <div class="banner__wrap">
+          <div class="container container--no-padding text--center">
+            <div class="space--xxl"></div>
+            <h1 class="banner-title {{page.banner.title-size}} bv-title-divider ">Gewinnspiel</h1>
+          </div>
+      </div>
+      <div class="banner__nav">
+        {% include nav/site.html %}
+      </div>
+      <div class="site-nav__offset"></div>
+    </div>
+
+
+    <div class="vpad--xxl bg--light">
+      <div class="container">
+      <div class="width width--lg text--center">
+        <div id="enter"></div>
+
+        <h3 class="text text--serif text--xxxxl text--bv-blue text--bold"> Am Gewinnspiel teilnehmen</h3>
+        <div class="space--lg"></div>
+            <div class="space--xl bg--white">
+
+          <h5 class="text text--md text--bold text--upper text--bv-grey text--center">Schhritt 2 von 2: Einsendung abschließen</h5>
+        <div id="entry-form" class="vpad--md">
+          <h2 class="text text--lg">Upload your video below to complete your entry into the competition!</h2>
+          <div class="space--xl"></div>
+          <iframe src="https://we.tl/send/de/secretescapes" width="320" height="50" frameborder="0"></iframe>
+              <div class="space--xl"></div>
+            <h2 class="text text--lg">Viel Glück!</h2>
+          {% assign form = page.competition-form %}
+              <div class="space--md"></div>
         </div>
+        </div>
+      </div>
       </div>
     </div>
 
+        {% include page/footer.html %}
   </body>
 
 </html>

@@ -19,7 +19,7 @@ layout: default
 
 
     {% for tips in section.tips.items %}
-      <h3 class=" text text--md text--bolder text--upper">{{tips.question}}?</h3>
+      <h3 class=" text text--lg text--bolder text--upper">{{tips.question}}?</h3>
       <div class="space--xs"></div>
       <div class=" text text--md text--normal bv-linehight">{{tips.answer}}</div>
       <div class="space--md"></div>
@@ -48,51 +48,61 @@ layout: default
       <div class="space--sm"></div>
     </div>
   <div class="space--md vpad--sm">
-      <a href="{{site.baseurl}}{{page.hotel.cta}}" target="_blank" class="btn btn--bv-red">Hotel buchen</a>
+      <a href="{{page.hotel.cta}}" target="_blank" class="btn btn--bv-red">Hotel buchen</a>
 </div>
     </div>
   </div>
 </div>
-<!-- Competition Form ---->
 
+<!-- Competition Form ---->
 
 
 <div class="vpad--xl bg--light">
   <div class="container">
     <div id="enter"></div>
 
-    <h3 class="text text--serif text--xxxxl text--bv-blue text--bold text--center">Am Gewinnspiel teilnehmen</h3>
-    <div id="entry-form" class="vpad--md">
-      {% assign form = page.competition-form %}
-      <form class="form boilerform competition-form" action="{{form.post-url}}" method="POST" data-expires="{{form.expiry-date}}" novalidate>
-        {% include form/messages.html %}
-        <div class="form__content width width--md">
-          {% for item in form.fields %}
-            <div class="form__input js-form-input">
-              {% case item.type %}
-                {% when 'text' %}
-                  {% include form/text.html data=item %}
-                {% when 'text-long' %}
-                  {% include form/text-long.html data=item %}
-                {% when 'email' %}
-                  {% include form/email.html data=item %}
-                {% when 'radio' %}
-                  {% include form/radio.html data=item %}
-                {% when 'checkbox' %}
-                  {% include form/checkbox.html data=item %}
-                {% when 'select' %}
-                  {% include form/select.html data=item %}
-              {% endcase %}
-            </div>
+    <h3 class="text text--serif text--xxxxl text--bv-blue text--bold text--center"> Am Gewinnspiel teilnehmen</h3><div class="space--lg"></div>.
+    <div class="space--xl bg--white">
+      <h5 class="text text--md text--bold text--upper text--bv-grey text--center">Schritt 1 von 2: Kontaktdaten</h5>
+      <div class="space--sm"></div>
+      <div class="width width--lg text text--normal text--md text--center ">Geben Sie bitte zunächst Ihre persönlichen Daten ein. </div>
 
-          {% endfor %}
-          <div class="space--sm"></div>
-          <p class="text--sm text--normal">{{form.terms}}</p>
-          <div class="space--sm"></div>
-          <input class="js-form-entry-time" id="entry-time" name="entry-time" type="hidden">
-          <button type="submit" class="c-button" disabled>{{form.submit}}</button>
-        </div>
-      </form>
+      <div id="entry-form" class="vpad--md">
+      {% assign form = page.competition-form %}
+        <form class="form boilerform competition-form" action="{{form.post-url}}" method="POST" data-expires="{{form.expiry-date}}" novalidate>
+          {% include form/messages.html %}
+          <div class="form__content width width--md">
+            {% for item in form.fields %}
+              <div class="form__input js-form-input text--center">
+                {% case item.type %}
+                  {% when 'text' %}
+                    {% include form/text.html data=item %}
+                  {% when 'text-long' %}
+                    {% include form/text-long.html data=item %}
+                  {% when 'email' %}
+                    {% include form/email.html data=item %}
+                  {% when 'radio' %}
+                    {% include form/radio.html data=item %}
+                  {% when 'checkbox' %}
+                    {% include form/checkbox.html data=item %}
+                  {% when 'select' %}
+                    {% include form/select.html data=item %}
+                {% endcase %}
+              </div>
+
+            {% endfor %}
+            <div class="space--xxl"></div>
+              <h5 class="text text--md text--bold text--upper text--bv-grey text--center">Schritt 2 von 2: Teilnahme abschließen</h5>
+                <p class="text text--md text--normal text--center">Im zweiten Schritt können Sie das fertige Video über WeTransfer hochladen und mit uns teilen. Bitte geben Sie dabei erneut Ihre E-Mail ein, Sie erhalten dann eine Versandbestätigung. </p>
+            <div class="space--xs"></div>
+            <div class="space--sm text--center">
+            <input class="js-form-entry-time" id="entry-time" name="entry-time" type="hidden">
+            <button type="submit" class="btn btn--bv-red" style="border: none;" disabled>Weiter zu Schritt 2 »</button></div>
+            <div class="space--sm"></div>
+            <p class="text--sm text--normal text--center">{{form.terms}}</p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
