@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include page/head.html %}
+
+
+  <body class="no-js">
+
+    {% include components/tracking.html %}
+    {% include page/header.html %}
+
+
+    <div class="bv-section-insider" >
+      <div class="container vpad--xxxl text--left text--xxl text--white">
+
+
+            {% for section in site.data.sections %}
+
+
+                      {% if section.agbs %}
+                          <div class="modal__content content-spacing text--xxl">
+                          <div class=" text--md ">{{section.credit}}</div>
+                          <div class=" text--md ">{{section.description}}</div>
+
+                  </div>
+              {% endif %}
+
+
+            {% endfor %}
+
+</div>
+</div>
+        {% include page/footer.html %}
+  </body>
+
+</html>

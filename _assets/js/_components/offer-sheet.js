@@ -65,9 +65,9 @@ $(offerSections).each(function(){
         var htmlBottom       = '<div class="offer__bottom"></div>';
         var htmlBottomLeft   = '<div class="offer__bottom-left"><div class="offer__details">Ab <span class="offer__price">€'+salePrice+'</span> '+salePriceDescription+'</div></div>';
 
-        if(saleTags.indexOf("refundable") >= 0){
+      /*  if(saleTags.indexOf("refundable") >= 0){
           htmlTags = $(htmlTags).append("<div class='offer__tag offer__tag-refundable'>Stornierbar</div>");
-        }
+        }*/
         if(saleTags.indexOf("customisable") >= 0){
           htmlTags = $(htmlTags).append("<div class='offer__tag offer__tag-customisable'>Konfigurierbar</div>");
         }
